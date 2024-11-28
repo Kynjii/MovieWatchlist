@@ -1,0 +1,49 @@
+
+
+
+
+
+
+.result-card-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        ". p . t t i ."
+        ". p . r g b ."
+        ". p . c c c ."
+        ;
+}
+
+
+.poster {
+    grid-area: p;
+}
+
+h2 {
+    grid-area: t;
+}
+
+.fa-star {
+    grid-area: s;
+}
+
+.imdb-rating {
+    grid-area: i;
+}
+
+.runtime {
+    grid-area: r;
+}
+
+.genre {
+    grid-area: g;
+}
+
+.add-button {
+    grid-area: b;
+}
+
+.plot-container {
+    grid-area: c;
+}

@@ -24,17 +24,36 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input                   
                     type="search" 
-                    id="mySearch"
-                    class="icon" 
+                    class="mySearch" 
                     name="q"
                     placeholder="Search the database..."
                     aria-label="Search through the movie database"
                     pattern="[a-zA-Z0-9]+"
                     required>
-                <button id="search-button">Search</button> 
+                <button class="search-button">Search</button> 
             </div>
         </form>
     </header>
+    <main>
+        <section class="search-results-container">
+            <!-- JS inserts here -->
+            <div class="result-card-container">
+                <img src="#" class="poster">
+                <h2>Title of movie goes here</h2>
+                <i class="fa-solid fa-star"></i>
+                <p class="imdb-rating" aria-label="imdb rating">8.1</p>
+                <p class="runtime" aria-label="runtime">164 min</p>
+                <p class="genre" aria-label="genre">Action, Drama, Mystery</p>
+                <div class="add-button">
+                    <i class="fa-solid fa-circle-plus"></i>   
+                    <p>Watchlist</p>               
+                </div>
+                <p class="plot-container" id="plot-container">
+                    Plot text goes here and i want the text to be reeeeaaaaalllllyyyyyy long so i can test what it looks like when there is too much text on the screen at anyone time.
+                </p>
+            </div>
+        </section>
+    </main>
     <script src="index.js"></script>
 </body>
 
