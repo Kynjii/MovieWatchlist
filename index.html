@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Movie Watchlist" content="A simple movie watchlist site that helps you track and organize the movies you want to watch. Easily add titles to your list, mark them as watched, and keep everything in one convenient place.">
+    <meta name="keywords" content="Movie Watchlist, Track Movies, Organize Movies, Movie List, Watchlist Tracker, Movie Planner, Film Watchlist, Simple Movie Tracker, Manage Movies, To-Watch List">
+    <meta name="author" content="Dean Burrows">
+    <title>Movie Watchlist | Dean Burrows</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- FONT AWSEOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <h1>Find your film</h1>
+        <a href="#learn-more">My Watchlist</a>
+        <form>
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input                   
+                    type="search" 
+                    id="mySearch"
+                    class="icon" 
+                    name="q"
+                    placeholder="Search the database..."
+                    aria-label="Search through the movie database"
+                    pattern="[a-zA-Z0-9]+"
+                    required>
+                <button id="search-button">Search</button> 
+            </div>
+        </form>
+    </header>
+    <script src="index.js"></script>
+</body>
+
+</html>
