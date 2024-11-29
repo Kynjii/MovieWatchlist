@@ -1,27 +1,49 @@
-
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
 
 
 
 
 
 .result-card-container {
+    border: 1px solid red;
+    margin: 5em;
+    width: 28.875em;
+    height: 12.3125em;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 
-        ". p . t t i ."
-        ". p . r g b ."
-        ". p . c c c ."
+        ". . . . . . . . . . . ."
+        "p p p . t t t t t s i ."
+        "p p p . r r g g g g b b"
+        "p p p . c c c c c c c c"
+        "p p p . c c c c c c c c"
+        "p p p . c c c c c c c c"
         ;
+        align-items: center;
+        justify-items: start;
 }
 
 
 .poster {
     grid-area: p;
+    justify-self: center;
 }
 
 h2 {
     grid-area: t;
+    font-weight: medium;
+    font-size: 1.125em;
+}
+
+.fa-star,
+.runtime,
+.genre,
+.add-button {
+    font-size: 0.75em;
 }
 
 .fa-star {
@@ -46,4 +68,5 @@ h2 {
 
 .plot-container {
     grid-area: c;
+    font-size: 0.875em;
 }
