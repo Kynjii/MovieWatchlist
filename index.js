@@ -18,10 +18,18 @@ function handleSearch(e){
     fetch(fetchUrl)
         .then(res => res.json())
         .then(searchData => {
-            const moviesArr = searchData.Search || []
-            searchResult = moviesArr
-            searchTitle()
-            })        
+            if (searchData.Response === "True"){
+                const moviesArr = searchData.Search || []
+                searchResult = moviesArr
+                searchTitle()
+            } else {
+            document.getElementById("search-results-container").innerHTML = `
+            <div class="search-error">
+                <p>No results found. Try a different search.</p>
+            <div>
+            `;
+        }
+    })     
 }
 
 function searchTitle(){
@@ -70,6 +78,11 @@ searchBtn.addEventListener('click', handleSearch)
 
 
 
+
+
+function addToWatchlist(){
+
+}
 
 
 

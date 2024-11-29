@@ -5,7 +5,6 @@
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    position: fixed;
     background-color: #121212;
 }
 
@@ -205,3 +204,28 @@ h2 {
 
 
 
+.empty-result-state,
+.search-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2E2E2F;
+}
+
+.search-error {
+    font-size: 1.125em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20vh;  
+}
+
+.empty-result-state p {
+    margin: 0;
+    font-size: 1.125em;
+    font-weight: bold;
+}
+
+.fa-film {
+    font-size: 5em;
+    margin-top: 20vh;
+}
