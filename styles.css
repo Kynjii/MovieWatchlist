@@ -107,6 +107,7 @@ form {
 
 .my-search {
     background-color: #2E2E2F;
+    color: #A5A5A5;
     border: 0;
     height: 100%;
 }
@@ -155,6 +156,7 @@ button:disabled {
 .poster {
     grid-area: p;
     justify-self: center;
+    height: 9.25em;
 }
 
 h2 {
