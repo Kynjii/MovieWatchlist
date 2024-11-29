@@ -1,5 +1,6 @@
 const searchBtn = document.getElementById("search-button")
 const searchEl = document.getElementById("my-search")
+const searchContainer = document.getElementById("search-container")
 
 let searchResult = []
 
@@ -83,10 +84,6 @@ searchBtn.addEventListener('click', handleSearch)
 function addToWatchlist(){
 
 }
-
-
-
-
 
 
 

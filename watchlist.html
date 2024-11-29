@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body id="watchlist">
     <header>
         <div class="hero-container">
-            <h1>Find your film</h1>
-            <a href="#" class="watchlist-link">My Watchlist</a>
+            <h1>My Watchlist</h1>
+            <a href="index.html" class="search-movies-link">Search for movies</a>
             <form>
                 <div class="search-container">
                     <label for="my-search"><i class="fa-solid fa-magnifying-glass"></i></label>
@@ -43,7 +43,15 @@
     </header>
     <main>
         <section class="search-results-container" id="search-results-container">
-            <!-- JS inserts here -->
+            <div class="empty-watchlist-state">
+                <p>Your watchlist is looking a little empty...</p>
+                <div class="go-find-button">
+                    <a href="index.html">
+                        <i class="fa-solid fa-circle-plus"></i>   
+                        <p>Let's add some movies!</p>
+                    </a>                                   
+                </div>
+            </div>
         </section>
     </main>
     <script src="index.js"></script>
