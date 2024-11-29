@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -69,32 +73,50 @@ h1 {
 }
 
 form {
+    display: flex;
     align-self: flex-end;
     margin-left: auto;
     margin-right: auto;
     grid-row: 3;
     grid-column: span 2;
-    border: 1px solid red;
+    border: 0;
     border-radius: 0.375em;
     background-color: #2E2E2F;
     max-width: 28.875em;
-    max-height: 2.375em;
-    justify-content: center;
+    height: 2.375em;
     align-items: center;
-    padding: 0.8125em;
     color: #A5A5A5;
+    position: relative;
+    bottom: -1em;
+}
+
+.search-container {
+    height: 100%;
+    padding-left: 0.8125em;
+}
+
+.my-search {
+    background-color: #2E2E2F;
+    border: 0;
 }
 
 .search-button {
+    height: 100%;
     background-color: #4B4B4B;
     color: #fff;
-    border: 1px solid pink;
+    margin: 0;
+    border: 0;
+    border-radius: 0em 0.375em 0.375em 0em;
 }
 
 
 /* ============
     RESULT CARD STYLES
     =========== */
+
+.search-results-container {
+    margin-top: 2.625em;
+}
 
 .result-card-container {
     border: 1px solid red; /* GET RID OF */
