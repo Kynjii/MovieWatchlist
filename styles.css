@@ -57,13 +57,13 @@ header {
     margin-left: auto;
     margin-right: auto;
     color: #fff;
-    border: 1px solid rebeccapurple; /* GET RID OF */
 }
 
 h1 {
     align-self: center;
     grid-row: 2;
     margin: 0;
+    text-shadow: 2px 2px 1px #121212;
 }
 
 .watchlist-link {
@@ -72,6 +72,14 @@ h1 {
     grid-row: 2;
     text-decoration: none;
     color: #fff;
+    text-shadow: 2px 2px 1px #121212;
+}
+
+.watchlist-link:hover,
+.watchlist-link:active,
+.watchlist-link:focus {
+    color: #FEC654;
+    text-shadow: 0px 0px 0px #FEC654;
 }
 
 form {
@@ -116,6 +124,10 @@ form {
 .search-button:focus,
 .search-button:hover {
     background-color: #a5a5a585
+}
+
+button:disabled {
+    cursor: not-allowed;
 }
 
 
