@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: "Inter", sans-serif;
     position: fixed;
+    background-color: #121212;
 }
 
 /* ============
@@ -16,9 +17,10 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill minmax(2em, 1fr));
     grid-template-rows: repeat(auto-fill minmax(6.25em, 1fr));
+    column-gap: 0.5em;
     grid-template-areas: 
         ". . . . . . . . . . . ."
-        "p p p . t t t t t s i ."
+        "p p p . t t t t t t s i"
         "p p p . r r g g g g b b"
         "p p p . c c c c c c c c"
         "p p p . c c c c c c c c"
@@ -82,7 +84,7 @@ form {
     border: 0;
     border-radius: 0.375em;
     background-color: #2E2E2F;
-    max-width: 28.875em;
+    min-width: 16.5625em;
     height: 2.375em;
     align-items: center;
     color: #A5A5A5;
@@ -98,6 +100,7 @@ form {
 .my-search {
     background-color: #2E2E2F;
     border: 0;
+    height: 100%;
 }
 
 .search-button {
@@ -107,6 +110,12 @@ form {
     margin: 0;
     border: 0;
     border-radius: 0em 0.375em 0.375em 0em;
+}
+
+.search-button:active,
+.search-button:focus,
+.search-button:hover {
+    background-color: #a5a5a585
 }
 
 
@@ -119,7 +128,6 @@ form {
 }
 
 .result-card-container {
-    border: 1px solid red; /* GET RID OF */
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -128,6 +136,8 @@ form {
     height: auto;
     align-items: center;
     justify-items: start;
+    border-bottom: 1px solid #2c2c2c;
+    color: #fff;
 }
 
 .poster {
@@ -150,10 +160,14 @@ h2 {
 
 .fa-star {
     grid-area: s;
+    color: #FEC654;
+    height: 0.9375em;
 }
 
 .imdb-rating {
     grid-area: i;
+    justify-self: flex-start;
+    font-size: 0.65em;
 }
 
 .runtime {
@@ -171,6 +185,7 @@ h2 {
 .plot-container {
     grid-area: c;
     font-size: 0.875em;
+    color: #a5a5a5;
 }
 
 

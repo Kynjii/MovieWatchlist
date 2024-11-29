@@ -26,10 +26,11 @@
             <a href="#" class="watchlist-link">My Watchlist</a>
             <form>
                 <div class="search-container">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <label for="my-search"><i class="fa-solid fa-magnifying-glass"></i></label>
                     <input
                         type="search"
                         class="my-search"
+                        id="my-search"
                         name="q"
                         placeholder="Search the database..."
                         aria-label="Search through the movie database"
@@ -44,7 +45,7 @@
         <section class="search-results-container">
             <!-- JS inserts here -->
             <div class="result-card-container">
-                <img src="#" class="poster">
+                <img src="#" class="poster" alt="A poster for the movie ${}">
                 <h2>Blade Runner Black Out 2022</h2>
                 <i class="fa-solid fa-star"></i>
                 <p class="imdb-rating" aria-label="imdb rating">8.1</p>
