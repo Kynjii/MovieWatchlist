@@ -21,22 +21,24 @@
 
 <body>
     <header>
-        <h1>Find your film</h1>
-        <a href="#learn-more">My Watchlist</a>
-        <form>
-            <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input                   
-                    type="search" 
-                    class="mySearch" 
-                    name="q"
-                    placeholder="Search the database..."
-                    aria-label="Search through the movie database"
-                    pattern="[a-zA-Z0-9]+"
-                    required>
-                <button class="search-button">Search</button> 
-            </div>
-        </form>
+        <div class="hero-container">
+            <h1>Find your film</h1>
+            <a href="#" class="watchlist-link">My Watchlist</a>
+            <form>
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="search"
+                        class="mySearch"
+                        name="q"
+                        placeholder="Search the database..."
+                        aria-label="Search through the movie database"
+                        pattern="[a-zA-Z0-9]+"
+                        required>
+                    <button class="search-button">Search</button>
+                </div>
+            </form>
+        </div>
     </header>
     <main>
         <section class="search-results-container">

@@ -1,20 +1,17 @@
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
+    position: fixed;
 }
 
-
-
-
+/* ============
+    LAYOUT
+    =========== */
 
 .result-card-container {
-    border: 1px solid red;
-    margin: 5em;
-    width: 28.875em;
-    height: 12.3125em;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fill minmax(2em, 1fr));
+    grid-template-rows: repeat(auto-fill minmax(6.25em, 1fr));
     grid-template-areas: 
         ". . . . . . . . . . . ."
         "p p p . t t t t t s i ."
@@ -22,11 +19,94 @@ body {
         "p p p . c c c c c c c c"
         "p p p . c c c c c c c c"
         "p p p . c c c c c c c c"
-        ;
-        align-items: center;
-        justify-items: start;
+    ;
+
 }
 
+.hero-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto-fill, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(auto-fill, 1fr));
+}
+
+
+/* ============
+    HEADER / HERO STYLES
+    =========== */
+
+header {
+    height: 13em;
+    width: 100vw;
+    background-image: url("images/hero-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-blend-mode: difference;
+    filter: opacity(0.9);
+}
+
+.hero-container {
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    border: 1px solid rebeccapurple; /* GET RID OF */
+}
+
+h1 {
+    align-self: center;
+    grid-row: 2;
+    margin: 0;
+}
+
+.watchlist-link {
+    align-self: center;
+    justify-self: center;
+    grid-row: 2;
+    text-decoration: none;
+    color: #fff;
+}
+
+form {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    grid-row: 3;
+    grid-column: span 2;
+    border: 1px solid red;
+    border-radius: 0.375em;
+    background-color: #2E2E2F;
+    max-width: 28.875em;
+    max-height: 2.375em;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8125em;
+    color: #A5A5A5;
+}
+
+.search-button {
+    background-color: #4B4B4B;
+    color: #fff;
+    border: 1px solid pink;
+}
+
+
+/* ============
+    RESULT CARD STYLES
+    =========== */
+
+.result-card-container {
+    border: 1px solid red; /* GET RID OF */
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 28.875em;
+    min-height: 12.3125em;
+    height: auto;
+    align-items: center;
+    justify-items: start;
+}
 
 .poster {
     grid-area: p;
@@ -70,3 +150,7 @@ h2 {
     grid-area: c;
     font-size: 0.875em;
 }
+
+
+
+
