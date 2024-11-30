@@ -6,7 +6,7 @@ let searchResult = []
 
 function handleSearch(e){
     e.preventDefault()
-    const baseUrl = "http://www.omdbapi.com/?"
+    const baseUrl = "https://www.omdbapi.com/?"
     const key = "f7f81c19"
     const searchInput = searchEl.value
     const params = new URLSearchParams({
@@ -36,7 +36,7 @@ function handleSearch(e){
 function searchTitle(){
     let html = ``
     for (let movie of searchResult){
-        const baseUrl = "http://www.omdbapi.com/?"
+        const baseUrl = "https://www.omdbapi.com/?"
         const key = "f7f81c19"
         const imdbId = movie.imdbID
         const params = new URLSearchParams({
