@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="My Watchlist" content="A simple movie watchlist site that helps you track and organize the movies you want to watch. Easily add titles to your list, mark them as watched, and keep everything in one convenient place.">
-    <meta name="keywords" content="Movie Watchlist, Track Movies, Organize Movies, Movie List, Watchlist Tracker, Movie Planner, Film Watchlist, Simple Movie Tracker, Manage Movies, To-Watch List">
-    <meta name="author" content="Dean Burrows">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple movie watchlist site that helps you track and organize the movies you want to watch. Easily add titles to your list, mark them as watched, and keep everything in one convenient place." />
+    <meta
+      name="keywords"
+      content="Movie Watchlist, Track Movies, Organize Movies, Movie List, Watchlist Tracker, Movie Planner, Film Watchlist, Simple Movie Tracker, Manage Movies, To-Watch List" />
+    <meta name="author" content="Dean Burrows" />
     <title>My Watchlist</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 
     <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
 
-<body id="watchlist">
+  <body id="watchlist">
     <header>
-        <div class="hero-container">
-            <h1>My Watchlist</h1>
-            <a href="index.html" class="search-movies-link">Search for movies</a>
-            <form>
-                <div class="search-container">
-                    <label for="my-search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input
-                        type="search"
-                        class="my-search"
-                        id="my-search"
-                        name="q"
-                        placeholder="Search the database..."
-                        aria-label="Search through the movie database"
-                        pattern="[a-zA-Z0-9]+"
-                        required>
-                    <button class="search-button" id="search-button">Search</button>
-                </div>
-            </form>
-        </div>
+      <div class="hero-container">
+        <h1>My Watchlist</h1>
+        <a href="index.html" class="search-movies-link">Search for movies</a>
+        <form>
+          <div class="search-container">
+            <label for="my-search"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></label>
+            <input
+              type="search"
+              class="my-search"
+              id="my-search"
+              name="q"
+              placeholder="Search the database..."
+              aria-label="Search through the movie database"
+              pattern="[a-zA-Z0-9]+"
+              required />
+            <button class="search-button" id="search-button">Search</button>
+          </div>
+        </form>
+      </div>
     </header>
     <main>
-        <section class="watchlist-container" id="watchlist-container">
-        </section>
+      <section class="watchlist-container" id="watchlist-container"></section>
     </main>
     <script src="watchlist.js"></script>
-</body>
-
+  </body>
 </html>
