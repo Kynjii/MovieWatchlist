@@ -59,19 +59,25 @@ function searchTitle(){
 
                     html += `
                         <div class="result-card-container" data-imdbid="${data.imdbID}">
-                            <img src="${data.Poster}" class="poster" alt="A poster for the movie ${data.Title}">
-                            <h2>${data.Title}</h2>
-                            <i class="fa-solid fa-star"></i>
-                            <p class="imdb-rating" aria-label="imdb rating">${data.imdbRating}</p>
-                            <p class="runtime" aria-label="runtime">${data.Runtime}</p>
-                            <p class="genre" aria-label="genre">${data.Genre}</p>
-                                <div class="actions">
-                                    <i class="fa-solid fa-circle-plus"></i>   
-                                    <button class="add-button" onclick="addToWatchlist('${data.imdbID}')">Add to Watchlist</button>               
-                                </div>
-                            <p class="plot-container" id="plot-container">
-                                ${data.Plot}
-                            </p>
+                            <div class="card-header">
+                                <img src="${data.Poster}" class="poster" alt="A poster for the movie ${data.Title}">
+                                <h2>${data.Title}</h2>
+                                <i class="fa-solid fa-star"></i>
+                                <p class="imdb-rating" aria-label="imdb rating">${data.imdbRating}</p>
+                            </div>
+                            <div class="card-info">
+                                <p class="runtime" aria-label="runtime">${data.Runtime}</p>
+                                <p class="genre" aria-label="genre">${data.Genre}</p>
+                                    <div class="actions">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                        <button class="add-button" onclick="addToWatchlist('${data.imdbID}')">Add to Watchlist</button>
+                                    </div>
+                            </div>
+                            <div class="card-plot">
+                                <p class="plot-container" id="plot-container">
+                                    ${data.Plot}
+                                </p>
+                            </div>
                         </div>
                     `
                 

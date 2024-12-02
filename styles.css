@@ -12,23 +12,6 @@ body {
     LAYOUT
     =========== */
 
-.result-card-container,
-.watchlist-card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill minmax(2em, 1fr));
-    grid-template-rows: repeat(auto-fill minmax(6.25em, 1fr));
-    column-gap: 0.5em;
-    grid-template-areas: 
-        ". . . . . . . . . . . ."
-        "p p p . t t t t t t s i"
-        "p p p . r r g g g g b b"
-        "p p p . c c c c c c c c"
-        "p p p . c c c c c c c c"
-        "p p p . c c c c c c c c"
-    ;
-
-}
-
 .hero-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(auto-fill, 1fr));
@@ -61,7 +44,9 @@ header {
 
 h1 {
     align-self: center;
-    grid-row: 2;
+    justify-self: center;
+    grid-row: 1;
+    grid-column: 1 / 3;
     margin: 0;
     text-shadow: 2px 2px 1px #121212;
 }
@@ -71,6 +56,7 @@ h1 {
     align-self: center;
     justify-self: center;
     grid-row: 2;
+    grid-column: 2;
     text-decoration: none;
     color: #fff;
     text-shadow: 2px 2px 1px #121212;
@@ -145,37 +131,49 @@ button:disabled {
 
 
 /* ============
-    RESULT CARD STYLES
+    CARD & CARD CONTAINER STYLES
     =========== */
 
-.search-results-container {
+.search-results-container,
+.watchlist-card-container {
     margin-top: 2.625em;
 }
 
 .result-card-container,
 .watchlist-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     max-width: 28.875em;
     min-height: 12.3125em;
     height: auto;
-    align-items: center;
-    justify-items: start;
     border-bottom: 1px solid #2c2c2c;
     color: #fff;
 }
 
-.poster {
-    grid-area: p;
-    justify-self: center;
-    height: 9.25em;
+.card-header {
+    display: flex;
+    align-items: center;
 }
 
-h2 {
-    grid-area: t;
-    font-weight: medium;
-    font-size: 1.125em;
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.card-plot {
+    display: flex;
+}
+
+.result-card-container p,
+.watchlist-card-container p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .fa-star,
@@ -185,8 +183,41 @@ h2 {
     font-size: 0.75em;
 }
 
-.actions{
+.poster {
+    justify-self: center;
+    height: 9.25em;
+    display: none;
+}
+
+/* Card Header */
+
+h2 {
+    font-weight: medium;
+    font-size: 1.125em;
+    margin: 0;
+
+}
+
+.fa-star {
+    color: #FEC654;
+    height: 0.9375em;
+}
+
+.imdb-rating {
+    font-size: 0.65em;
+}
+
+.fa-star,
+.imdb-rating {
+    margin-left: 0.5em;
+    align-self: center;
+}
+
+/* Card Info */
+
+.actions {
     display: flex;
+    align-items: center;
 }
 
 .add-button,
@@ -194,41 +225,21 @@ h2 {
     background: 0;
     border: 0;
     color: #fff;
+    display: none;
 }
 
-.fa-star {
-    grid-area: s;
-    color: #FEC654;
-    height: 0.9375em;
+i.fa-circle-plus {
+    font-size: 3em;
 }
 
-.imdb-rating {
-    grid-area: i;
-    justify-self: flex-start;
-    font-size: 0.65em;
-}
-
-.runtime {
-    grid-area: r;
-}
-
-.genre {
-    grid-area: g;
-}
-
-.actions {
-    grid-area: b;
-}
-
+/* Card Plot */
 .plot-container {
-    grid-area: c;
     font-size: 0.875em;
     color: #a5a5a5;
 }
 
 
-
-
+/* SEARCH, WATCHLIST EMPTY & ERROR STATES */
 .empty-result-state,
 .search-error,
 .empty-watchlist-state {
@@ -247,8 +258,6 @@ h2 {
     margin-top: 1em;
     text-decoration: none;
 }
-
-
 
 .search-error,
 .empty-watchlist-state {
