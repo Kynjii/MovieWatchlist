@@ -146,6 +146,7 @@ button:disabled {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    padding: 0.5em 0;
     width: 90%;
     max-width: 28.875em;
     min-height: 12.3125em;
@@ -173,6 +174,7 @@ button:disabled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0.3em 0;
 }
 
 .fa-star,
@@ -287,8 +289,15 @@ i.fa-circle-plus {
     Media Queries
     =========== */
 
-@media (min-width: 425px) {
+@media (min-width: 375px) {
     .poster {
+        display: flex;
+    }
+}
+
+@media (min-width: 480px) {
+    .add-button,
+    .remove-button {
         display: flex;
     }
 }

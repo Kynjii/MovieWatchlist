@@ -48,7 +48,6 @@ function renderWatchlist(watchlist){
             </div>
         </div>
     `).join("")
-
     watchlistContainer.innerHTML = html
 }
 
