@@ -73,18 +73,22 @@ form {
     align-items: center;
     color: #A5A5A5;
     position: relative;
-    bottom: -1em;
+    bottom: -2.4em;
 }
 
 .search-container {
+    display: flex;
+    align-items: center;
     height: 100%;
-    padding-left: 0.8125em;
+    width: 100%;
+    padding-left: 0.5125em;    
 }
 
 .watchlist-container {
     height: 100%;
     width: 90%;
     max-width: 28.875em;
+    margin: 0 auto;
 }
 
 #watchlist form {
@@ -95,12 +99,13 @@ label .fa-magnifying-glass {
     width: 1em;
 }
 
-.my-search {
-    flex: 1;
+input.my-search {
+    flex-grow: 1;
     background-color: #2E2E2F;
     color: #A5A5A5;
     border: 0;
-    height: 100%;
+    height: 2.375em;
+    padding-left: 0.3em;
 }
 
 .search-button {
@@ -257,6 +262,10 @@ i.fa-circle-minus {
     text-decoration: none;
 }
 
+#watchlist-container > div > div > a {
+    margin-top: 1em;
+}
+
 .search-error,
 .empty-watchlist-state {
     font-size: 1.125em;
@@ -285,6 +294,11 @@ i.fa-circle-minus {
     #index > header > div > form > div > label > i {
         display: none;
     }
+
+    input.my-search {
+        width: 100%; 
+        border-radius: 0.375em;
+    }
 }
 
 @media (min-width: 375px) {
@@ -294,6 +308,10 @@ i.fa-circle-minus {
 
     .card-content {
         margin-left: 0.8em;
+    }
+
+    h1 {
+        align-self: flex-start;
     }
 }
 
@@ -306,9 +324,5 @@ i.fa-circle-minus {
     i.fa-circle-plus,
     i.fa-circle-minus {
         font-size: 2em;
-    }
-
-    h1 {
-        justify-self: start;
     }
 }
