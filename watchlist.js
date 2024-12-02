@@ -35,9 +35,9 @@ function renderWatchlist(watchlist){
                 <div class="card-info">
                     <p class="runtime" aria-label="runtime">${movie.Runtime || "N/A"}</p>
                     <p class="genre" aria-label="genre">${movie.Genre || "N/A"}</p>
-                    <div class="actions">
+                    <div class="actions" onclick="removeFromWatchlist('${movie.imdbID}')">
                         <i class="fa-solid fa-circle-plus"></i>
-                        <button class="remove-button" id="remove-button" onclick="removeFromWatchlist('${movie.imdbID}')">Remove</button>
+                        <button class="remove-button" id="remove-button">Remove</button>
                     </div>
                 </div>
                 <div class="card-plot">
