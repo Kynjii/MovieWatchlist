@@ -50,6 +50,8 @@ function searchTitle(){
         const imdbId = movie.imdbID
         const params = new URLSearchParams({
             i: imdbId,
+            type: "movie",
+            plot: "short",
             apiKey: key
         })
         const fetchUrl = `${baseUrl}${params.toString()}`
