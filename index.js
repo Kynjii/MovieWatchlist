@@ -15,9 +15,11 @@ function handleSearch(e){
     const searchInput = searchEl.value
     const params = new URLSearchParams({
         s: searchInput,
+        type: "movie",
+        plot: "short",
         apiKey: key
     })
-    const fetchUrl = `${baseUrl}${params.toString()}`    
+    const fetchUrl = `${baseUrl}${params.toString()}`   
 
     fetch(fetchUrl)
         .then(res => res.json())
