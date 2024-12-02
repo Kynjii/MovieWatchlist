@@ -83,18 +83,23 @@ form {
     border: 0;
     border-radius: 0.375em;
     background-color: #2E2E2F;
-    min-width: 16.5625em;
+    width: 90%;
+    max-width: 28.875em;
     height: 2.375em;
     align-items: center;
     color: #A5A5A5;
     position: relative;
     bottom: -1em;
+    justify-content: space-evenly;
 }
 
-.search-container,
-.watchlist-container {
+.search-container {
     height: 100%;
     padding-left: 0.8125em;
+}
+
+.watchlist-container {
+    height: 100%;
 }
 
 /* hides search form when on the watchlist page to preserve grid */
@@ -102,7 +107,7 @@ form {
     visibility: hidden;
 }
 
-.my-search {
+input.my-search {
     background-color: #2E2E2F;
     color: #A5A5A5;
     border: 0;
@@ -154,12 +159,7 @@ button:disabled {
     color: #fff;
 }
 
-.card-poster {
-    display: flex;
-}
-
 .card-content {
-    margin-left: 0.8em;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -184,11 +184,14 @@ button:disabled {
     font-size: 0.75em;
 }
 
+.card-poster {
+    display: none;
+}
+
 .poster {
     justify-self: center;
     height: 9.25em;
     width: 6.25em;
-    display: none;
 }
 
 /* Card Header */
@@ -230,7 +233,8 @@ h2 {
     display: none;
 }
 
-i.fa-circle-plus {
+i.fa-circle-plus,
+i.fa-circle-minus {
     font-size: 3em;
 }
 
@@ -290,8 +294,12 @@ i.fa-circle-plus {
     =========== */
 
 @media (min-width: 375px) {
-    .poster {
+    .card-poster {
         display: flex;
+    }
+
+    .card-content {
+        margin-left: 0.8em;
     }
 }
 
@@ -299,5 +307,14 @@ i.fa-circle-plus {
     .add-button,
     .remove-button {
         display: flex;
+    }
+
+    i.fa-circle-plus,
+    i.fa-circle-minus {
+        font-size: 2em;
+    }
+
+    h1 {
+        justify-self: start;
     }
 }
