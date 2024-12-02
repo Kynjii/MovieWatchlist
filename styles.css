@@ -43,8 +43,7 @@ h1 {
 
 .watchlist-link,
 .search-movies-link {
-    align-self: center;
-    justify-self: center;
+    align-self: flex-end;
     text-decoration: none;
     color: #fff;
     text-shadow: 2px 2px 1px #121212;
@@ -63,9 +62,8 @@ h1 {
 
 form {
     display: flex;
-    align-self: flex-end;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    justify-content: space-between;
     border: 0;
     border-radius: 0.375em;
     background-color: #2E2E2F;
@@ -97,13 +95,12 @@ label .fa-magnifying-glass {
     width: 1em;
 }
 
-input.my-search {
+.my-search {
     flex: 1;
     background-color: #2E2E2F;
     color: #A5A5A5;
     border: 0;
     height: 100%;
-    max-width: 60%;
 }
 
 .search-button {
@@ -111,7 +108,6 @@ input.my-search {
     width: 5em;
     background-color: #4B4B4B;
     color: #fff;
-    margin: 0;
     border: 0;
     border-radius: 0em 0.375em 0.375em 0em;
     cursor: pointer;
@@ -258,7 +254,6 @@ i.fa-circle-minus {
     display: flex;
     gap: 0.4375em;
     align-items: center;
-    margin-top: 1em;
     text-decoration: none;
 }
 
@@ -285,6 +280,12 @@ i.fa-circle-minus {
 /* ============
     Media Queries
     =========== */
+
+@media (max-width: 338px) {
+    #index > header > div > form > div > label > i {
+        display: none;
+    }
+}
 
 @media (min-width: 375px) {
     .card-poster {
