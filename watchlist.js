@@ -21,23 +21,33 @@ function renderWatchlist(watchlist){
     return
     }    
 
-    let html = watchlist.map(movie => `
-            <div class="watchlist-card-container" data-imdbid="${movie.imdbID}">
+    let html = watchlist.map(movie => `          
+        <div class="watchlist-card-container" data-imdbid="${movie.imdbID}">
+            <div class="card-poster">
                 <img src="${movie.Poster}" class="poster" alt="A poster for the movie ${movie.Title}">
-                <h2>${movie.Title}</h2>
-                <i class="fa-solid fa-star"></i>
-                <p class="imdb-rating" aria-label="imdb rating">${movie.imdbRating || "N/A"}</p>
-                <p class="runtime" aria-label="runtime">${movie.Runtime || "N/A"}</p>
-                <p class="genre" aria-label="genre">${movie.Genre || "N/A"}</p>
-                    <div class="actions">
-                        <i class="fa-solid fa-circle-plus"></i>   
-                        <button class="remove-button" id="remove-button" onclick="removeFromWatchlist('${movie.imdbID}')">Remove</button>               
-                    </div>
-                <p class="plot-container" id="plot-container">
-                    ${movie.Plot || "No plot available"}
-                </p>
             </div>
-        `).join("")
+            <div class="card-content">
+                <div class="card-header">
+                    <h2>${movie.Title}</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <p class="imdb-rating" aria-label="imdb rating">${movie.imdbRating || "N/A"}</p>
+                </div>
+                <div class="card-info">
+                    <p class="runtime" aria-label="runtime">${movie.Runtime || "N/A"}</p>
+                    <p class="genre" aria-label="genre">${movie.Genre || "N/A"}</p>
+                    <div class="actions">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <button class="remove-button" id="remove-button" onclick="removeFromWatchlist('${movie.imdbID}')">Remove</button>
+                    </div>
+                </div>
+                <div class="card-plot">
+                    <p class="plot-container" id="plot-container">
+                        ${movie.Plot || "No plot available"}
+                    </p>
+                </div>
+            </div>
+        </div>
+    `).join("")
 
     watchlistContainer.innerHTML = html
 }

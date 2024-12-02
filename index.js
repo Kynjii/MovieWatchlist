@@ -57,39 +57,42 @@ function searchTitle(){
             .then(data => {
                 imdbIdSearchResult.push(data)
 
-                    html += `
+                    html += `                        
                         <div class="result-card-container" data-imdbid="${data.imdbID}">
-                            <div class="card-header">
+                            <div class="card-poster">
                                 <img src="${data.Poster}" class="poster" alt="A poster for the movie ${data.Title}">
-                                <h2>${data.Title}</h2>
-                                <i class="fa-solid fa-star"></i>
-                                <p class="imdb-rating" aria-label="imdb rating">${data.imdbRating}</p>
                             </div>
-                            <div class="card-info">
-                                <p class="runtime" aria-label="runtime">${data.Runtime}</p>
-                                <p class="genre" aria-label="genre">${data.Genre}</p>
-                                    <div class="actions">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h2>${data.Title}</h2>
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="imdb-rating" aria-label="imdb rating">${data.imdbRating || "N/A"}</p>
+                                </div>
+                                <div class="card-info">
+                                    <p class="runtime" aria-label="runtime">${data.Runtime || "N/A"}</p>
+                                    <p class="genre" aria-label="genre">${data.Genre || "N/A"}</p>
+                                    <div class="actions" onclick="addToWatchlist('${data.imdbID}')">
                                         <i class="fa-solid fa-circle-plus"></i>
-                                        <button class="add-button" onclick="addToWatchlist('${data.imdbID}')">Add to Watchlist</button>
+                                        <button class="add-button">Add to Watchlist</button>
                                     </div>
-                            </div>
-                            <div class="card-plot">
-                                <p class="plot-container" id="plot-container">
-                                    ${data.Plot}
-                                </p>
+                                </div>
+                                <div class="card-plot">
+                                    <p class="plot-container" id="plot-container">
+                                        ${data.Plot || "No plot available"}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    `
-                
+                    `                
                     searchResultContainer.innerHTML = html
             })
             .catch(error => {
                 console.error("Error fetching movie details:", error)
                 alert("An error occurred while fetching movie details. Please try again later.")   
-            })      
-                
+            })            
     }
 }
+
 
 function addToWatchlist(imdbId) {
     const movie = imdbIdSearchResult.find(m => m.imdbID === imdbId)

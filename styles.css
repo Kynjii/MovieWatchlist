@@ -135,23 +135,33 @@ button:disabled {
     =========== */
 
 .search-results-container,
-.watchlist-card-container {
+.watchlist-container {
     margin-top: 2.625em;
 }
 
 .result-card-container,
 .watchlist-card-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     max-width: 28.875em;
     min-height: 12.3125em;
-    height: auto;
     border-bottom: 1px solid #2c2c2c;
     color: #fff;
+}
+
+.card-poster {
+    display: flex;
+}
+
+.card-content {
+    margin-left: 0.8em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-header {
@@ -163,17 +173,6 @@ button:disabled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0.5em;
-}
-
-.card-plot {
-    display: flex;
-}
-
-.result-card-container p,
-.watchlist-card-container p {
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 .fa-star,
@@ -186,6 +185,7 @@ button:disabled {
 .poster {
     justify-self: center;
     height: 9.25em;
+    width: 6.25em;
     display: none;
 }
 
@@ -236,10 +236,14 @@ i.fa-circle-plus {
 .plot-container {
     font-size: 0.875em;
     color: #a5a5a5;
+    display: flex;
+    margin-top: 0.7em;
 }
 
+/* ============
+    SEARCH, WATCHLIST EMPTY & ERROR STATES
+    =========== */
 
-/* SEARCH, WATCHLIST EMPTY & ERROR STATES */
 .empty-result-state,
 .search-error,
 .empty-watchlist-state {
@@ -277,4 +281,14 @@ i.fa-circle-plus {
 .fa-film {
     font-size: 5em;
     margin-top: 20vh;
+}
+
+/* ============
+    Media Queries
+    =========== */
+
+@media (min-width: 425px) {
+    .poster {
+        display: flex;
+    }
 }
