@@ -1,26 +1,23 @@
 const searchBtn = document.getElementById("search-button")
 const searchEl = document.getElementById("my-search")
-const searchContainer = document.getElementById("search-container")
 const searchResultContainer = document.getElementById("search-results-container")
+const baseUrl = "https://www.omdbapi.com/?"
+const key = "f7f81c19"
 
 let searchResult = []
-let detailedResults = []
+let imdbIdSearchResult = []
 let watchlist = JSON.parse(localStorage.getItem("watchlist")) || []
 
-
-
+searchBtn.addEventListener('click', handleSearch)
 
 function handleSearch(e){
     e.preventDefault()
-    const baseUrl = "https://www.omdbapi.com/?"
-    const key = "f7f81c19"
     const searchInput = searchEl.value
     const params = new URLSearchParams({
         s: searchInput,
         apiKey: key
     })
-    const fetchUrl = `${baseUrl}${params.toString()}`
-    
+    const fetchUrl = `${baseUrl}${params.toString()}`    
 
     fetch(fetchUrl)
         .then(res => res.json())
@@ -44,12 +41,10 @@ function handleSearch(e){
 }
 
 function searchTitle(){
-    detailedResults = []
+    imdbIdSearchResult = []
     let html = ``
 
     for (let movie of searchResult){
-        const baseUrl = "https://www.omdbapi.com/?"
-        const key = "f7f81c19"
         const imdbId = movie.imdbID
         const params = new URLSearchParams({
             i: imdbId,
@@ -60,7 +55,7 @@ function searchTitle(){
         fetch(fetchUrl)
             .then(res => res.json())
             .then(data => {
-                detailedResults.push(data)
+                imdbIdSearchResult.push(data)
 
                     html += `
                         <div class="result-card-container" data-imdbid="${data.imdbID}">
@@ -87,19 +82,11 @@ function searchTitle(){
                 alert("An error occurred while fetching movie details. Please try again later.")   
             })      
                 
-            }
     }
-
-searchBtn.addEventListener('click', handleSearch)
-
-
-
-
-
-
+}
 
 function addToWatchlist(imdbId) {
-    const movie = detailedResults.find(m => m.imdbID === imdbId)
+    const movie = imdbIdSearchResult.find(m => m.imdbID === imdbId)
 
     if (movie && !watchlist.some(item => item.imdbID === imdbId)) {
         watchlist.push(movie)
@@ -109,9 +96,3 @@ function addToWatchlist(imdbId) {
         alert(`${movie ? movie.Title : "This movie"} is already in your watchlist.`)
     }
 }
-
-
-
-
-
- 

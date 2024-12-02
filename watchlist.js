@@ -19,8 +19,7 @@ function renderWatchlist(watchlist){
          </div>
     `
     return
-    }
-    
+    }    
 
     let html = watchlist.map(movie => `
             <div class="watchlist-card-container" data-imdbid="${movie.imdbID}">
